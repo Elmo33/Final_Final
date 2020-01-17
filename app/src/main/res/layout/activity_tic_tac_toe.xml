@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+
+    tools:context=".TicTacToeActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="270dp">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            android:text="TicTacToe"
+            android:textColor="#FCF8F8"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/player1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="170dp"
+            android:text="Player 1: 0"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/player2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/player1_score"
+            android:layout_marginLeft="30dp"
+            android:text="Player 2: 0"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_reset"
+            style="@style/Button_style"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_shape"
+            android:text="reset"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_restart"
+            style="@style/Button_style"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/button_reset"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_shape"
+            android:text="restart"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        >
+
+        <Button
+            android:id="@+id/button_00"
+            style="@style/Button_style2" />
+
+        <Button
+            android:id="@+id/button_01"
+            style="@style/Button_style2" />
+
+        <Button
+            android:id="@+id/button_02"
+            style="@style/Button_style2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button_10"
+            style="@style/Button_style2" />
+
+        <Button
+            android:id="@+id/button_11"
+            style="@style/Button_style2" />
+
+        <Button
+            android:id="@+id/button_12"
+            style="@style/Button_style2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button_20"
+            style="@style/Button_style2" />
+
+        <Button
+            android:id="@+id/button_21"
+            style="@style/Button_style2" />
+
+        <Button
+            android:id="@+id/button_22"
+            style="@style/Button_style2" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
