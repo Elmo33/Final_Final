@@ -51,7 +51,7 @@ class UpdateInfo : AppCompatActivity() {
     }
     private fun contactInfo(name: String, phone: String?, address: String?, link: String?) {
         val userInfo = UserInfo(name, phone, address, link)
-        db.child(auth.currentUser?.uid!!).setValue(userInfo).addOnCanceledListener {
+        db.child(auth.currentUser?.uid!!).child("Info").setValue(userInfo).addOnCanceledListener {
             Toast.makeText(this, "Success", Toast.LENGTH_LONG).show()
         }
     }
