@@ -81,6 +81,7 @@ class MainActivity : AppCompatActivity() {
         //  .child(auth.currentUser?.uid!!) ით ვუკავშირდებით მომხმარებლის კუთვნილ ფოლდერს
         //  addValueEventListener ფუნქციით კი იწყება db-სთან დაკავშირება
         db.child(auth.currentUser?.uid!!)
+            .child("Info")
             .addValueEventListener(object : ValueEventListener {
                 
                 // თუ ვერ მოხდა წაკითხვა მონაცემების კონსოლში ვხედავთ ამას
