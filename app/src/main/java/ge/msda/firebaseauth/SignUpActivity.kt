@@ -26,20 +26,31 @@ class SignUpActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseDatabase.getInstance().getReference("UserInfo")
 
+        
+        // signup ღილაკით შემოგმვაქვს მონაცემები 
         SignUp.setOnClickListener {
-
 
             val email: String = EmailSignup.text.toString()
             val password: String = PasswordSignup.text.toString()
+            val passwordconfirm: String = PasswordConfirmSignup.text.toString()
 
-            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            // ამოწმებს რომელიმე არის თუ არა ცარიელი
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(passwordconfirm)) {
 
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_LONG).show()
 
             }
+            // ამოწმებს თუ პაროლები ემთხვევა ერთმანეტს
+            else if(password != passwordconfirm){
+                Toast.makeText(this, "Passwords Do not match", Toast.LENGTH_LONG).show()
+            }
+            // ამოწმებს თუ პაროლის სიგრძე 6 ზე მეტია
             else if(password.length < 6){
                 Toast.makeText(this, "Password must be at least 6 characters long", Toast.LENGTH_LONG).show()
-            }else {
+            }
+            // .createUserWithEmailAndPassword ფუნქციას ვაწვდით იმეილს და პაროლს რის შედეგადაც
+            // ხდება რეგისტრაცია. წარმატებული რეგისტრაციისას მომხმარებელი გადაჰყავს მთავარ გვერდზე.
+            else {
 
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, OnCompleteListener { task ->
@@ -61,7 +72,7 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
-
+        // ლოგინ აქტივიტიზე დაბრუნებისთვის
         member.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
